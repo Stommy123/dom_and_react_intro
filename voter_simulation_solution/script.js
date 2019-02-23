@@ -25,30 +25,44 @@ class Candidate extends Person {
 
 const isEmpty = array => !array.length;
 const getPercentage = _ => Math.ceil(Math.random() * 100);
-const getRandomCandidate = candidateArray => candidateArray[Math.floor(Math.random() * candidateArray.length)] || Object();
+const getRandomCandidate = candidateArray =>
+  candidateArray[Math.floor(Math.random() * candidateArray.length)] || Object();
 
 const getWinner = _ => {
-  const candidatesList = [...democratCandidates, ...republicanCandidates, ...independentCandidates];
-  if (isEmpty(candidatesList)) return alert('There are no candidates to vote for!');
-  const winner = candidatesList.reduce((acc, candidate) => acc.votes > candidate.votes ? acc : candidate);
+  const candidatesList = [
+    ...democratCandidates,
+    ...republicanCandidates,
+    ...independentCandidates
+  ];
+  if (isEmpty(candidatesList))
+    return alert("There are no candidates to vote for!");
+  const winner = candidatesList.reduce((acc, candidate) =>
+    acc.votes > candidate.votes ? acc : candidate
+  );
   alert(`${winner.party} candidate, ${winner.name} is the winner!`);
 };
 
 const determineLiberal = votePercentage => {
-  if (votePercentage >= 1 && votePercentage <= 60) getRandomCandidate(democratCandidates).votes++;
-  else if (votePercentage >= 61 && votePercentage <= 80) getRandomCandidate(republicanCandidates).votes++;
+  if (votePercentage >= 1 && votePercentage <= 60)
+    getRandomCandidate(democratCandidates).votes++;
+  else if (votePercentage >= 61 && votePercentage <= 80)
+    getRandomCandidate(republicanCandidates).votes++;
   else getRandomCandidate(independentCandidates).votes++;
 };
 
 const determineConservative = votePercentage => {
-  if (votePercentage >= 1 && votePercentage <= 20) getRandomCandidate(democratCandidates).votes++;
-  else if (votePercentage >= 21 && votePercentage <= 80) getRandomCandidate(republicanCandidates).votes++;
+  if (votePercentage >= 1 && votePercentage <= 20)
+    getRandomCandidate(democratCandidates).votes++;
+  else if (votePercentage >= 21 && votePercentage <= 80)
+    getRandomCandidate(republicanCandidates).votes++;
   else getRandomCandidate(independentCandidates).votes++;
 };
 
 const determineIndependent = votePercentage => {
-  if (votePercentage >= 1 && votePercentage <= 25) getRandomCandidate(democratCandidates).votes++;
-  else if (votePercentage >= 26 && votePercentage <= 50) getRandomCandidate(republicanCandidates).votes++;
+  if (votePercentage >= 1 && votePercentage <= 25)
+    getRandomCandidate(democratCandidates).votes++;
+  else if (votePercentage >= 26 && votePercentage <= 50)
+    getRandomCandidate(republicanCandidates).votes++;
   else getRandomCandidate(independentCandidates).votes++;
 };
 
@@ -57,7 +71,8 @@ const simulateVote = _ => {
     const votePercentage = getPercentage();
     const currentIdeology = voter.ideology.toLowerCase();
     if (currentIdeology === "liberal") determineLiberal(votePercentage);
-    else if (currentIdeology === "conservative") determineConservative(votePercentage);
+    else if (currentIdeology === "conservative")
+      determineConservative(votePercentage);
     else determineIndependent(votePercentage);
   });
   getWinner();

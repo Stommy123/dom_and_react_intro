@@ -1,14 +1,338 @@
+/* ------------------------------------
+GLOBALS
+------------------------------------ */
+/*COLORS
+$Primary Dark = #1B2355
+Pimary Light = #A0CCE3
+Secondary Dark = #F66464
+Secondary Light = #E79294
+Tertiary Dark = #8A859B
+Tertiary Mid = #BAC0BA
+Tertiary Light = #E8ECEF
+
+FONTS
+font-family: 'Contrail One', cursive;
+font-family: 'Work Sans', sans-serif;
+*/
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Work Sas", sans-serif;
+  font-size: 24px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+h1 {
+  font-family: "Contrail One", cursive;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+i {
+  float: right;
+  font-size: 5rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ------------------------------------
+NAV
+------------------------------------ */
+nav {
+  background-color: #1b2355;
+  color: #fff;
+  height: 60px;
+}
+
+nav ul {
+  font-size: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+nav ul li {
+  border-right: 1px solid #e79294;
+  display: inline-block;
+  font-size: 1.5rem;
+  line-height: 60px;
+  text-align: center;
+  width: 24vw;
+}
+
+nav li:last-child {
+  border-width: 0;
+}
+
+nav a:visited {
+  color: #fff;
+}
+
+/* ------------------------------------
+#home
+------------------------------------ */
+#home {
+  background-image: url("https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif");
+  background-size: cover;
+  color: #fff;
+  -webkit-filter: invert(100%);
+  -moz-filter: invert(100%);
+  filter: invert(100%);
+  height: calc(100vh - 60px);
+  text-align: center;
+}
+
+#home header {
+  position: relative;
+  top: 40%;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1b2355+0,1b2355+100&0+0,0.7+16,1+52,0.7+85,0+100 */
+  background: -moz-linear-gradient(
+    left,
+    rgba(27, 35, 85, 0) 0%,
+    rgba(27, 35, 85, 0.7) 16%,
+    rgba(27, 35, 85, 1) 52%,
+    rgba(27, 35, 85, 0.7) 85%,
+    rgba(27, 35, 85, 0) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    rgba(27, 35, 85, 0) 0%,
+    rgba(27, 35, 85, 0.7) 16%,
+    rgba(27, 35, 85, 1) 52%,
+    rgba(27, 35, 85, 0.7) 85%,
+    rgba(27, 35, 85, 0) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    rgba(27, 35, 85, 0) 0%,
+    rgba(27, 35, 85, 0.7) 16%,
+    rgba(27, 35, 85, 1) 52%,
+    rgba(27, 35, 85, 0.7) 85%,
+    rgba(27, 35, 85, 0) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+#home h1 {
+  margin: 0;
+}
+
+/* ------------------------------------
+main
+------------------------------------ */
+
+main {
+  /* height: 100vh; */
+  font-size: 3rem;
+}
+
+main h1 {
+  padding-top: 2rem;
+}
+
+main img {
+  max-height: 30%;
+  max-width: 90%;
+  display: block;
+  margin: 13rem auto;
+}
+
+main p {
+  padding-left: 10px;
+  padding-right: 10px;
+  /* padding: auto 10px;
+  padding: 0 10px 0 10px; */
+}
+
+/* ------------------------------------
+#portfolio
+------------------------------------ */
+
+#portfolio {
+  border: 1px solid #000;
+}
+
+#portfolio h1 {
+  padding-top: 2rem;
+  font-size: 5rem;
+}
+
+#portfolio h2 {
+  font-size: 4rem;
+  margin-top: 0;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+#portfolio p {
+  font-size: 3rem;
+  margin-bottom: 0;
+  padding: 0 2rem 2rem 2rem;
+}
+
+#portfolio div.portfolio-img {
+  background-color: lightblue;
+  background-size: cover;
+  background-position: center 15%;
+  height: 20vh;
+}
+
+#portfolio .iron-man {
+  background-image: url("./images/IronMan.jpg");
+}
+
+#portfolio .phoenix {
+  background-image: url("./images/Phoenix.jpg");
+}
+
+#portfolio .storm {
+  background-image: url("./images/Storm.jpg");
+}
+
+#portfolio .gambit {
+  background-image: url("./images/Gambit.jpg");
+}
+
+#portfolio div:nth-child(odd) {
+  background-color: #e8ecef;
+}
+
+#portfolio div:nth-child(even) {
+  background-color: #bac0ba;
+}
+
+/* ------------------------------------
+#resume
+------------------------------------ */
+#resume {
+  height: 100vh;
+  padding: 0 2rem;
+}
+
+/* ------------------------------------
+#contact-me
+------------------------------------ */
+
+#contact-me {
+  background-color: #a0cce3;
+  padding: 3rem;
+  text-align: center;
+}
+
+#contact-me input,
+#contact-me textarea {
+  border-color: #000;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  border-width: 2px;
+  margin: 1rem;
+  width: 80%;
+}
+
+#contact-me input {
+  height: 3rem;
+}
+
+#contact-me textarea {
+  height: 10rem;
+}
+
+#contact-me input:focus,
+#contact-me textarea:focus {
+  box-shadow: 0 0 5px 3px rgba(255, 0, 0, 0.5);
+  outline: none;
+}
+
+#contact-me input[type="submit"] {
+  background-color: #f66464;
+  border-color: #f66464;
+  color: #fff;
+}
+
+#contact-me input[type="submit"]:active {
+  background-color: #c33f3f;
+}
+
+/* ------------------------------------
+footer
+------------------------------------ */
+
+footer a i {
+  float: none;
+  text-align: center;
+  width: 30%;
+}
+
+/* ------------------------------------
+MEDIA QUERIES min-800 max-1600
+------------------------------------ */
+@media screen and (min-device-width: 800px) and (-webkit-min-device-pixel-ratio: 1) {
+  body {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  nav ul li {
+    font-size: 1rem;
+  }
+
+  i {
+    font-size: 2rem;
+  }
+
+  main img {
+    margin: 0 auto !important;
+  }
+
+  main p {
+    font-size: 1.5rem;
+    padding: 4rem;
+  }
+
+  #portfolio h1 {
+    font-size: 2rem;
+  }
+
+  #portfolio h2 {
+    font-size: 1.5rem;
+  }
+
+  #portfolio p {
+    font-size: 1rem;
+  }
+
+  /* #portfolio div {
+      height:  50vh;
+    }
+
+    #portfolio .portfolio-img,
+    #portfolio p {
+      display: inline-block;
+      padding: 2rem 1rem;
+      width: 45%;
+
+    }
+
+    #portfolio div:nth-child(odd) div.portfolio-img {
+      float: right;
+      margin-top: 1rem;
+    } */
+
+  #portfolio > div {
+    width: 47%;
+    display: inline-block;
+    border: 1px solid #000;
+  }
 }
