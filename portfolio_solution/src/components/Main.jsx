@@ -2,6 +2,9 @@ import React from "react";
 
 const Main = _ => (
   <main id="about-me">
+    <a href="#">
+      <i class="far fa-arrow-alt-circle-up" />
+    </a>
     <img
       src="https://www.deshebideshe.com/assets/news_images/7f5320efbbe7f01edaa136c52973fcc9.jpg"
       alt="my pictire"

@@ -8,13 +8,13 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 const App = _ => [
-  <Navbar />,
-  <Home />,
-  <Main />,
-  <Projects />,
-  <Resume />,
-  <Contact />,
-  <Footer />
+  <Navbar key="nav" />,
+  <Home key="home" />,
+  <Main key="main" />,
+  <Projects key="projects" />,
+  <Resume key="resume" />,
+  <Contact key="contact" />,
+  <Footer key="footer" />
 ];
 
 export default App;

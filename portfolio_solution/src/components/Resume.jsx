@@ -2,20 +2,17 @@ import React from "react";
 
 const Resume = _ => (
   <aside id="resume">
+    <a href="#">
+      <i class="far fa-arrow-alt-circle-up" />
+    </a>
     <h1>Resume</h1>
     <header>
       <h2>This Student</h2>
       <address>
-        <a href="foo.com">305 299 0906</a>
-        <a href="bar.com">Tommy@Tommy.com</a>
-        <a href="hello.com" rel="nofollow">
-          Tommy.com
-        </a>
-        Happy Street 1919
-        <br />
-        Miami, Florida
-        <br />
-        USA
+        <a href="foo.com">| 305 299 0906 | </a>
+        <a href="bar.com"> Tommy@Tommy.com | </a>
+        <a href="hello.com"> Tommy.com | </a>
+        Happy Street 1919, Miami, Florida, USA
       </address>
     </header>
     <hr />
