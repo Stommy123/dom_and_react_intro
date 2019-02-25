@@ -1,0 +1,118 @@
+body {
+  background: #e8e7e7;
+  font-family: arial;
+  text-transform: uppercase;
+}
+
+.head {
+  color: #fff;
+  padding: 5px 10px;
+  text-align: center;
+  background-color: #8063fa;
+  border-bottom: solid 2px #d4caff;
+}
+
+.head h1 {
+  flex-grow: 1;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  font-weight: normal;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  border-width: 0 0 1px 0;
+  margin: 15px 10px 15px 15px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #5b45b9;
+  border-style: none;
+  text-shadow: none;
+  text-transform: uppercase;
+  color: #c7bcf8;
+  letter-spacing: 2px;
+  outline: none;
+}
+
+input[type="text"]::-webkit-input-placeholder {
+  color: #c7bcf8;
+  letter-spacing: 2px;
+}
+
+input[type="text"]:focus {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+input[type="submit"] {
+  display: block;
+  font-size: 0.6em;
+  margin: 15px 15px 15px 0;
+  padding: 10px;
+  background-color: #44338d;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-shadow: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.form {
+  display: flex;
+  background-color: #8063fa;
+}
+
+.disabled {
+  background-color: darkgrey !important;
+}
+
+.shopping-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.item {
+  display: flex;
+  font-size: 1.2em;
+  border-bottom: solid 2px #eeeeee;
+  letter-spacing: 2px;
+}
+
+.item-name {
+  flex-grow: 1;
+  line-height: 3.5em;
+  padding-left: 10px;
+}
+
+.item-action {
+  border: none;
+  font-size: 1.15em;
+  font-weight: bold;
+  color: #b0aeba;
+  background-color: #dcdcdc;
+  display: block;
+  padding: 20px 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+.add:hover {
+  background: #83d97c;
+}
+
+.remove:hover {
+  background: #ef5350;
+}
+
+.to-buy {
+  width: 50%;
+  text-align: center;
+}
+
+.cart {
+  width: 50%;
+  text-align: center;
+}
