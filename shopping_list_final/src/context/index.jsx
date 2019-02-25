@@ -26,7 +26,6 @@ export const GlobalContextProvider = props => {
   return (
     <GlobalContext.Provider
       value={{
-        shoppingList,
         addItem,
         updateShoppingList,
         needToBuy,

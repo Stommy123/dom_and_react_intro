@@ -7,9 +7,11 @@ import ItemForm from "./components/ItemForm";
 const App = _ => {
   return (
     <GlobalContextProvider>
-      <Header />
-      <ShoppingList />
-      <ItemForm />
+      <div className="App">
+        <Header />
+        <ShoppingList />
+        <ItemForm />
+      </div>
     </GlobalContextProvider>
   );
 };

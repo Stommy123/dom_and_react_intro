@@ -10,6 +10,7 @@ const ItemForm = _ => {
     addItem(value);
     setValue(String());
   };
+  const isDuplicate = itemValidation.includes(value.toLowerCase());
   return (
     <form className="form" onSubmit={handleSubmit}>
       <input
@@ -19,15 +20,11 @@ const ItemForm = _ => {
         onChange={e => setValue(e.target.value)}
       />
       <input
-        disabled={itemValidation.includes(value.toLowerCase())}
+        disabled={isDuplicate}
         className={classNames({
-          disabled: itemValidation.includes(value.toLowerCase())
+          disabled: isDuplicate
         })}
-        value={
-          itemValidation.includes(value.toLowerCase())
-            ? "Item already on the List!"
-            : "Add Item"
-        }
+        value={isDuplicate ? "Item already on the List!" : "Add Item"}
         type="submit"
       />
     </form>

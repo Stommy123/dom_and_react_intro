@@ -68,6 +68,14 @@ input[type="submit"] {
   background-color: darkgrey !important;
 }
 
+.App {
+  background: #fff;
+  width: 700px;
+  margin: 70px auto;
+  box-shadow: 0 2px 0 rgb(133, 104, 250);
+  border-radius: 6px;
+  overflow: hidden;
+}
 .shopping-list {
   display: flex;
   flex-direction: row;
@@ -85,6 +93,7 @@ input[type="submit"] {
   flex-grow: 1;
   line-height: 3.5em;
   padding-left: 10px;
+  /* background-color: white; */
 }
 
 .item-action {
