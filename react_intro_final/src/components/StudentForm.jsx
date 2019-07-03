@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class User extends Component {
   state = { name: String() };
@@ -13,12 +13,7 @@ class User extends Component {
     const { name } = this.state;
     return (
       <div>
-        <input
-          type="text"
-          placeholder="Enter name..."
-          onChange={this.updateStudentName}
-          value={name}
-        />
+        <input type="text" placeholder="Enter name..." onChange={this.updateStudentName} value={name} />
         <button type="button" onClick={this.submitNewStudent}>
           Add Student
         </button>

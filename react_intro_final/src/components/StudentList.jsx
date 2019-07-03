@@ -1,5 +1,5 @@
-import React from "react";
-import Student from "./Student";
+import React from 'react';
+import Student from './Student';
 
 const StudentList = ({ students }) => (
   <div className="students">

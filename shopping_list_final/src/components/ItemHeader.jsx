@@ -1,7 +1,5 @@
-import React from "react";
+import React from 'react';
 
-const ItemHeader = ({ title }) => (
-  <header className=" head list-type">{title}</header>
-);
+const ItemHeader = ({ title }) => <header className=" head list-type">{title}</header>;
 
 export default ItemHeader;

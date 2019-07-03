@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
-import { GlobalContext } from "../context";
-import ItemHeader from "./ItemHeader";
-import Item from "./Item";
+import React, { useContext } from 'react';
+import { GlobalContext } from '../context';
+import ItemHeader from './ItemHeader';
+import Item from './Item';
 
 const ShoppingList = _ => {
   const { needToBuy, inCart } = useContext(GlobalContext);

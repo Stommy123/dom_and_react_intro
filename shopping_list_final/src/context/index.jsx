@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { initialState } from "../data";
+import React, { useState } from 'react';
+import { initialState } from '../data';
 
 export const GlobalContext = React.createContext({});
 
@@ -15,9 +15,7 @@ export const GlobalContextProvider = props => {
     setShoppingList(newShoppingList);
   };
   const updateShoppingList = id => {
-    const updatedShoppingList = shoppingList.map(item =>
-      item.id === id ? { ...item, inCart: !item.inCart } : item
-    );
+    const updatedShoppingList = shoppingList.map(item => (item.id === id ? { ...item, inCart: !item.inCart } : item));
     setShoppingList(updatedShoppingList);
   };
   const needToBuy = shoppingList.filter(item => !item.inCart);

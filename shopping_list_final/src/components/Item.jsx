@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { GlobalContext } from "../context";
+import React, { useContext } from 'react';
+import { GlobalContext } from '../context';
 
 const Item = ({ symbol, status, item }) => {
   const { updateShoppingList } = useContext(GlobalContext);

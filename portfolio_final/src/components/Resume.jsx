@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Resume = _ => (
   <aside id="resume">
@@ -25,10 +25,9 @@ const Resume = _ => (
           <li>Languages: HTML, CSS, Javascript</li>
         </ul>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
-          molestiae totam voluptas, voluptates nisi assumenda, maxime autem
-          nobis ab fugiat perferendis quisquam architecto aperiam minima
-          recusandae saepe expedita, nam esse!
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae molestiae totam voluptas, voluptates nisi
+          assumenda, maxime autem nobis ab fugiat perferendis quisquam architecto aperiam minima recusandae saepe
+          expedita, nam esse!
         </p>
       </li>
       <li>

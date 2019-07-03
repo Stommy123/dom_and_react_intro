@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import StudentForm from "./components/StudentForm";
-import StudentList from "./components/StudentList";
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import StudentForm from './components/StudentForm';
+import StudentList from './components/StudentList';
 
 class App extends Component {
   state = { students: [] };

@@ -1,9 +1,6 @@
-import React, { Component } from "react";
-import { data } from "./data";
-import Header from "./components/Header";
-import Players from "./components/Players";
-import Form from "./components/Form";
-import PlayerDetail from "./components/PlayerDetail";
+import React, { Component } from 'react';
+import { data } from './data';
+import { Header, Players, Form, PlayerDetail } from './components';
 
 class App extends Component {
   state = { players: data, selectedPlayerIndex: -1 };
@@ -48,8 +45,7 @@ class App extends Component {
     const highScore = this.getHighScore();
     const playerCount = players.length;
     const totalPoints = players.reduce((acc, player) => acc + player.score, 0);
-    const selectedPlayer =
-      selectedPlayerIndex !== -1 && players[selectedPlayerIndex];
+    const selectedPlayer = selectedPlayerIndex !== -1 && players[selectedPlayerIndex];
     return (
       <div className="scoreboard">
         <Header totalPoints={totalPoints} playerCount={playerCount} />

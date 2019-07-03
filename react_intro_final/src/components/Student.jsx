@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Student = ({ name }) => <div className="student">{name}</div>;
 
