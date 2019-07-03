@@ -1,73 +1,54 @@
 import React, { Component } from 'react';
-import { data } from './data/movieData';
-import Movies from './components/Movies';
-import NavBar from './components/NavBar';
-import MovieForm from './components/MovieForm';
-import Flash from './components/Flash';
-import Search from './components/Search';
+import { MOVIES } from './data';
+import { Movies, NavBar, MovieForm, Flash, Search } from './components';
+import { GlobalContext } from './context';
 
 class App extends Component {
-	state = {
-		movies: [],
-		flash: {
-			message: String(),
-			open: false,
-			type: String(),
-		},
-	};
+  static contextType = GlobalContext.Consumer;
+  state = { movies: MOVIES, filteredMovies: MOVIES };
+  createMovie = movie => {
+    const { movies } = this.state;
+    const lastMovie = movies[movies.length - 1];
+    const { dispatch } = this.context;
+    dispatch.flash.setFlash({ open: true, message: 'Movie successfully record', type: 'notice' });
+    const newMoviesList = [...movies, { id: lastMovie.id + 1, ...movie }];
+    this.setState({ movies: newMoviesList, filteredMovies: newMoviesList });
+  };
 
-	componentDidMount() {
-		const { movies } = data;
-		this.setState({ movies });
-	};
+  deleteMovie = id => _ => {
+    const { movies } = this.state;
+    const filteredMovies = movies.filter(movie => movie.id !== id);
+    const { dispatch } = this.context;
+    dispatch.flash.setFlash({ open: true, message: 'Movie successfully deleted', type: 'alert' });
+    this.setState({ movies: filteredMovies, filteredMovies });
+  };
 
-	createMovie = movie => {
-		const { movies } = this.state;
-		const newMovie = { id: movies.length, ...movie }
-		const flash = {
-			open: true,
-			message: 'Movie successfully recorded',
-			type: 'notice',
-		};
-		movies.push(newMovie);
-		this.setState({ movies, flash });
-	};
+  handleSearch = event => {
+    const { movies } = this.state;
+    const searchText = event.target.value || String();
+    const filteredMovies = searchText
+      ? movies.filter(({ name }) => name.toLowerCase().includes(searchText.toLowerCase()))
+      : movies;
+    const flash = { message: String(), open: false, type: String() };
+    this.setState({ filteredMovies, flash });
+  };
 
-	deleteMovie = id => {
-		const { movies } = this.state;
-		const filteredmovies = movies.filter(movie => movie.id !== id);
-		const flash = {
-			open: true,
-			message: 'Movie successfully deleted',
-			type: 'alert'
-		};
-		this.setState({ movies: filteredmovies, flash });
-	};
-
-	handleSearch = event => {
-		const searchText = event.target.value;
-		const regexp = RegExp(searchText, 'i');
-		let { movies } = this.state;
-		const flash = { message: String(), open: false, type: String() };
-		if (searchText.trim() !== String()) movies = movies.filter(movie => regexp.test(movie.name));
-		else movies = data.movies;
-		this.setState({ movies, flash });
-	};
-
-	render() {
-		const { movies, flash: { message, open, type } } = this.state;
-		return [
-			<NavBar />,
-			<Search handleSearch={this.handleSearch} />,
-			<Movies movies={movies} deleteMovie={this.deleteMovie} />,
-			<MovieForm createMovie={this.createMovie} />,
-			<Flash
-				message={message}
-				open={open}
-				type={type}
-			/>
-		];
-	};
-};
+  render() {
+    const { filteredMovies } = this.state;
+    const {
+      state: { flash },
+      dispatch
+    } = this.context;
+    return (
+      <>
+        <NavBar />
+        <Search handleSearch={this.handleSearch} />
+        <Movies movies={filteredMovies} deleteMovie={this.deleteMovie} />
+        <MovieForm createMovie={this.createMovie} />
+        <Flash {...flash} handleClose={dispatch.flash.resetFlash} />
+      </>
+    );
+  }
+}
 
 export default App;
